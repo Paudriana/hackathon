@@ -1,7 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Intro from "./components/Intro";
-import Avatar from "./components/Avatar";
+import Avatar from "./components/avatar/Avatar";
 import Learn from "./components/Learn";
 import Lesson from "./components/Lesson";
 import Quiz from "./components/Quiz";
