@@ -1,0 +1,40 @@
+.selectedAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+
+.avatarsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    place-items: center;
+    width: 100%;
+}
+
+.randomAvatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.continueButton {
+    background-color: pink;
+    margin-top: 2rem;
+    width: 150px;
+    height: 38px;
+    border: none;
+    border-radius: 12px;
+}
