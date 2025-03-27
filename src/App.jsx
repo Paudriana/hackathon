@@ -1,11 +1,11 @@
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Intro from "./components/Intro";
-import Avatar from "./components/avatar/Avatar";
-import Learn from "./components/Learn";
-import Lesson from "./components/Lesson";
-import Quiz from "./components/Quiz";
-import Result from "./components/Result";
+import Intro from "./pages/intro/Intro";
+import Avatar from "./pages/avatar/Avatar";
+import Learn from "./pages/learn.jsx/Learn";
+import Lesson from "./pages/lesson/Lesson";
+import Quiz from "./pages/quiz/Quiz";
+import Result from "./pages/result/Result";
 
 function App() {
   return (
