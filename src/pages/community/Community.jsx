@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Community.module.scss";
-import Footer from "../../components/shared/footer/footer";
+import Footer from "../../components/shared/footer/Footer";
 import CrownIcon from "../../assets/icons/ic_crown.svg";
 import MedalIcon from "../../assets/icons/ic_medal.svg";
 import AvatarCard from "../avatar/AvatarCard";

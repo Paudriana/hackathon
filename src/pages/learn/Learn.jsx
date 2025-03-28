@@ -1,5 +1,5 @@
 import { useUser } from "../../context/UserContext";
-import Footer from "../../components/shared/footer/footer";
+import Footer from "../../components/shared/footer/Footer";
 import LessonStep from "./LessonStep";
 import tesoroImg from "../../assets/tesoro.png";
 import styles from "./Learn.module.scss";

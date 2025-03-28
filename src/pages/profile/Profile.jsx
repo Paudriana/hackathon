@@ -1,7 +1,7 @@
 import React from "react";
 import { useUser } from "../../context/UserContext";
 import styles from "./Profile.module.scss";
-import Footer from "../../components/shared/footer/footer";
+import Footer from "../../components/shared/footer/Footer";
 import avatarIcon from "../../assets/icons/ic_avatar.svg";
 import pencilIcon from "../../assets/icons/ic_pencil_white.svg";
 import coinsIcon from "../../assets/icons/ic_coins.svg";
