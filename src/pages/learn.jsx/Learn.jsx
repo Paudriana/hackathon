@@ -1,3 +1,4 @@
+import Footer from "../../components/shared/footer/footer";
 import LessonStep from "./LessonStep";
 
 
@@ -33,7 +34,7 @@ export default function Learn() {
       {lessons.map((lesson, i) => (
         <LessonStep title={lesson.title} description={lesson.description} state={lesson.state} index={i}/>
       ))}
-     
+      <Footer />
     </div>
   );
 }

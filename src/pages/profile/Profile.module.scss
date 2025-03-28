@@ -1,0 +1,125 @@
+.profileContainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  background-color: #f8cdd0;
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 168px;
+  margin-bottom: 4rem;
+}
+
+.avatarContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.avatarWrapper {
+  position: absolute;
+  bottom: -170px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 3px solid #e95877;
+}
+
+.editButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #e95877;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: #e95877;
+    opacity: 0.8;
+  }
+}
+
+.editButton img {
+  width: 16px;
+  height: 16px;
+}
+
+.name {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.coins {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  border-radius: 12px;
+  min-height: 44px;
+  max-width: 215px;
+  margin: 0 auto;
+}
+
+.intis {
+  font-size: 1rem;
+  color: #ff6f61;
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.stat {
+  background-color: #f8cdd0;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.statValue {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.rewards {
+  margin-top: 20px;
+}
+
+.rewardCards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rewardCard {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.rewardCard.disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+}
+
+.rewardCost {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
