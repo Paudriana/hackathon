@@ -1,10 +1,7 @@
 .introContainer {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
     text-align: center;
-    background-color: #f8f9fa;
   }
   
   .logoAnimation {
@@ -20,16 +17,29 @@
   }
   
   .introContent {
+    margin-top: 55vh;
     max-width: 500px;
     padding: 20px;
+    text-align: left;
+
+    h1 {
+      font-weight: 600;
+    }
   }
   
   .introImage {
-    width: 100%;
-    max-width: 300px;
+    position: absolute;
+    top:0;
     margin-bottom: 20px;
+    left:0;
+    width: 100vw;;
   }
   
+  .introButton {
+    margin-top: 2rem;
+
+  }
+
   @keyframes fadeIn {
     0% { opacity: 0; transform: scale(0.8); }
     100% { opacity: 1; transform: scale(1); }

@@ -12,29 +12,51 @@
     grid-gap: 1rem;
     place-items: center;
     width: 100%;
+    margin-bottom: 2rem;
+
+}
+
+
+g[id~="Color/Palette/Blue-01"] {
+    fill: #FFEBEA !important;
 }
 
 .randomAvatar {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: pink;
+    background-color: #FFEBEA;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #2F2558
 }
 
 .buttonContainer {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
-.continueButton {
-    background-color: pink;
-    margin-top: 2rem;
-    width: 150px;
-    height: 38px;
-    border: none;
+.avatarTitle {
+    text-align: center;
+    margin: 1rem;
+    color: 2F2558;
+}
+
+.inputContainer {
+    width: 270px;
+    margin: auto;
+
+    h2 {
+        text-align: left;
+    }
+}
+
+.nameInput {
+    border: 2px solid #E95877;
     border-radius: 12px;
+    padding: 0.5rem;
+    width: 100%;
 }
