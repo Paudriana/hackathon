@@ -1,4 +1,5 @@
 import React from "react";
+import { useUser } from "../../context/UserContext";
 import styles from "./Profile.module.scss";
 import Footer from "../../components/shared/footer/footer";
 import avatarIcon from "../../assets/icons/ic_avatar.svg";
@@ -8,24 +9,29 @@ import imgMeet from "../../assets/images/img_meet.jpg";
 import checkIcon from "../../assets/icons/ic_pink_check.svg";
 import medalIcon from "../../assets/icons/ic_medal.svg";
 import crownIcon from "../../assets/icons/ic_crown.svg";
+import AvatarCard from "../avatar/AvatarCard"
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const { userState } = useUser(); 
+  const navigate = useNavigate();
+
   return (
     <div className={styles.profileContainer}>
       <div className={styles.header}>
         <div className={styles.avatarContainer}>
           <div className={styles.avatarWrapper}>
-            <img src={avatarIcon} alt="Avatar" className={styles.avatar} />
-            <button className={styles.editButton}>
+          <AvatarCard cardStyles={{ width: "150px", height: "150px" }} {...userState.avatar} />
+            <button className={styles.editButton} onClick={() => navigate("/avatar")}>
               <img src={pencilIcon} alt="Edit" />
             </button>
           </div>
         </div>
       </div>
-      <h2 className={styles.name}>Paula Pintado</h2>
+      <h2 className={styles.name}>{userState.name}</h2>
       <div className={styles.coins}>
         <img src={coinsIcon} alt="Coins" className={styles.coinsIcon} />
-        <p className={styles.intis}>20 Intis acumuladas</p>
+        <p className={styles.intis}>{`${userState.coins} Intis acumuladas`} </p>
       </div>
       <div className={styles.stats}>
         <div className={styles.stat}>
@@ -34,7 +40,7 @@ const Profile = () => {
           </div>
           <div>
             <p className={styles.statValue}>Nivel</p>
-            <p className={styles.statBig}>2</p>
+            <p className={styles.statBig}>{userState.level}</p>
           </div>
         </div>
         <div className={styles.stat}>
@@ -43,7 +49,7 @@ const Profile = () => {
           </div>
           <div>
             <p className={styles.statValue}>Experiencia</p>
-            <p className={styles.statBig}>500</p>
+            <p className={styles.statBig}>{userState.exp}</p>
           </div>
         </div>
         <div className={styles.stat}>
@@ -59,16 +65,6 @@ const Profile = () => {
       <h5 className="text-start fw-bold mt-4">Canjea tus intis:</h5>
       <div className={styles.rewards}>
         <div className={styles.carousel}>
-          <div className={styles.card}>
-            <img src={imgMeet} alt="Asesoramiento sobre créditos" className={styles.cardImage} />
-            <div className={styles.cardContent}>
-              <p className={styles.title}>Asesoramiento sobre créditos</p>
-              <p className={styles.rewardCost}>
-                <img src={coinsIcon} alt="Coins" className={styles.cardCoin} />
-                20 intis
-              </p>
-            </div>
-          </div>
           <div className={styles.card}>
             <img src={imgMeet} alt="Asesoramiento sobre créditos" className={styles.cardImage} />
             <div className={styles.cardContent}>

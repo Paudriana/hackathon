@@ -6,7 +6,7 @@ const LessonStep = ({ title, description, state, img, index }) => {
     const navigate = useNavigate();
     const isEven = index == 0 || index % 2 == 0;
     return (
-        <div className={`${styles.lessonStep} ${!isEven ? styles.evenLessonStep : "x"}`}>
+        <div className={`${styles.lessonStep} ${!isEven ? styles.evenLessonStep : ""}`}>
             <div className={styles.textContainer}>
                 <h5>{title}</h5>
                 <p>{description}</p>

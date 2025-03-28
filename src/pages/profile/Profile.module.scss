@@ -5,7 +5,7 @@
 }
 
 .header {
-  background-color: #f8cdd0;
+  background-color: #F38993;
   padding: 20px;
   border-radius: 12px;
   min-height: 168px;
@@ -37,7 +37,7 @@
   right: 10px;
   background-color: #e95877;
   border: none;
-  border-radius: 50%;
+  border-radius: 99px !important;
   padding: 5px;
   cursor: pointer;
   width: 31px;
@@ -66,16 +66,18 @@
   gap: 15px;
   justify-content: center;
   align-items: center;
-  background-color: pink;
+  background-color: #E95877;
   border-radius: 12px;
   min-height: 44px;
   max-width: 215px;
   margin: 0 auto;
+  
 }
 
 .intis {
   font-size: 1rem;
-  color: #ff6f61;
+  color: white;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -112,9 +114,6 @@
   margin: 0;
 }
 
-.rewards {
-}
-
 .rewardCards {
   display: flex;
   justify-content: space-around;
@@ -146,7 +145,7 @@
   background-color: #2F2558;
   color: white;
   border-radius: 10px;
-  //max-width: 180px;
+  width: 200px;
   flex-shrink: 0;
   scroll-snap-align: start;
   text-align: center;

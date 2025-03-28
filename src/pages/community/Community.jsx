@@ -3,7 +3,9 @@ import styles from "./Community.module.scss";
 import Footer from "../../components/shared/footer/footer";
 import CrownIcon from "../../assets/icons/ic_crown.svg";
 import MedalIcon from "../../assets/icons/ic_medal.svg";
-import AvatarIcon from "../../assets/icons/ic_avatar.svg";
+import AvatarCard from "../avatar/AvatarCard";
+
+import { avatars } from "../../utils/utils";
 
 const Community = () => {
   const podium = [
@@ -13,31 +15,39 @@ const Community = () => {
   ];
 
   const others = [
-    { name: "Maria Palacios", coins: 90, position: 4 },
-    { name: "Juana Roma", coins: 80, position: 5 },
+    { name: "Marisol", coins: 90, position: 4 },
+    { name: "Juana", coins: 80, position: 5 },
     { name: "Maribel Rodrigues", coins: 70, position: 6 },
-    { name: "Martha Perez", coins: 60, position: 7 },
-    { name: "Milagros Tuanama", coins: 50, position: 8 },
+    { name: "Rosita", coins: 60, position: 7 },
+    { name: "Laura", coins: 50, position: 8 },
   ];
+
+  const generateRandomAvatar = () => {
+    return (
+        <AvatarCard
+          topType={avatars[Math.floor(Math.random() * avatars.length)].topType}
+          accessoriesType={avatars[Math.floor(Math.random() * avatars.length)].accessoriesType}
+          hairColor={avatars[Math.floor(Math.random() * avatars.length)].hairColor}
+          clotheType={avatars[Math.floor(Math.random() * avatars.length)].clotheType}
+          clotheColor={avatars[Math.floor(Math.random() * avatars.length)].clotheColor}
+          skinColor={avatars[Math.floor(Math.random() * avatars.length)].skinColor}
+        />
+    )
+  }
 
   return (
     <>
       <div className={styles.ranking}>
-        <h2>Conoce a más mujeres que la rompen:</h2>
+        <h2>Conoce a más mujeres que tienen punche:</h2>
         <div className={styles.podium}>
           {podium.map((item) => (
             <div
               key={item.position}
-              className={`${styles.podiumItem} ${
-                styles[`position${item.position}`]
-              }`}
+              className={`${styles.podiumItem} ${styles[`position${item.position}`]
+                }`}
             >
               <div className={`${styles.avatarContainer} ${styles[`${item.position === 1 ? 'bFirst' : ''}`]}`}>
-                <img
-                  src={AvatarIcon}
-                  alt="Avatar"
-                  className={styles.faceAvatar}
-                />
+                {generateRandomAvatar()}
                 {item.position === 1 && (
                   <img src={CrownIcon} alt="Crown" className={styles.crown} />
                 )}
@@ -56,7 +66,7 @@ const Community = () => {
           {others.map((item) => (
             <div key={item.position} className={styles.otherItem}>
               <span>{item.position}°</span>
-              <img src={AvatarIcon} alt="Avatar" className={styles.avatar} />
+              {generateRandomAvatar()}
               <p>{item.name}</p>
               <p className={styles.coins}>
                 <img src={MedalIcon} alt="Medal" className={styles.medal} /> {item.coins}

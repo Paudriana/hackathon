@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser, ACTIONS } from "../../context/UserContext";
 import styles from "./Quiz.module.scss";
 import coinsIcon from "../../assets/icons/ic_coins.svg";
 import successLesson from "../../assets/success-lesson.png";
+import medalIcon from "../../assets/icons/ic_medal.svg";
 
 const questions = [
   { id: 1, question: "¿Cuál es un buen truco para empezar a ahorrar?", options: ["A. Ahorrar lo que me sobra a fin de mes.", "B. Separar el ahorro primero, antes de gastar.", "C. No gastar en nada y guardarlo todo."], correct: 1, answerExplanation: "Si ahorras después, nunca sobra; si ahorras primero, siempre guardas.", coins: 5 },
@@ -14,6 +16,7 @@ const questions = [
 
 export default function Quiz() {
   const navigate = useNavigate();
+  const { userState, dispatch } = useUser();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
@@ -58,6 +61,36 @@ export default function Quiz() {
 
   };
 
+  const updateLessons = () => {
+    const nextLesson = userState.lessons.find((lesson) => lesson.id == userState.selectedLesson.id + 1)
+    const newLessons = userState.lessons.filter((lesson) => lesson.id !== userState.selectedLesson.id && lesson.id !== nextLesson.id)
+
+    newLessons.push({
+      ...nextLesson,
+      state: "available"
+    })
+
+    newLessons.push({
+      ...userState.selectedLesson,
+      state: "completed"
+    })
+
+    
+    return newLessons
+
+
+  }
+
+  const handleLearnAgain = () => {
+    dispatch({ type: ACTIONS.SET_COINS, payload: 25 });
+    dispatch({ type: ACTIONS.SET_EXP, payload: 100 });
+    dispatch({ type: ACTIONS.SET_LEVEL, payload: 2 });
+
+    dispatch({ type: ACTIONS.SET_LESSONS, payload: updateLessons() });
+
+    navigate("/learn")
+  }
+
   return (
     <div className="quiz-container">
 
@@ -96,22 +129,26 @@ export default function Quiz() {
         </div>
       ) : (
         <div>
-          <h2>{"¡Lección Completada!"}</h2>
+          <h2 className={styles.lessonFinishedTitle}>{"¡Lección Completada!"}</h2>
           <img src={successLesson} alt="Coins" className={styles.resultImg} />
-          <div>
-            <div>
+          <div className={styles.resultCount}>
+            <p>Experiencia Obtenida</p>
+            <div className={styles.count}>
+              <img src={medalIcon} alt="Medal" />
               <p>100</p>
             </div>
-            <p>Experiencia Obtenida</p>
-          </div>
-          <div>
-            <div>
-              <p>25</p>
-            </div>
-            <p>Intis ganados</p>
 
           </div>
-          <button onClick={() => navigate("/learn")} >Seguir aprendiendo</button>
+          <div className={styles.resultCount} style={{ borderColor: "#E95877" }}>
+            <p>Intis ganados</p>
+            <div className={styles.count}>
+              <img src={coinsIcon} alt="Coins" className={styles.coinsIcon} />
+              <p style={{ marginLeft: "0.5rem", color: "#E95877" }}>25</p>
+            </div>
+
+
+          </div>
+          <button onClick={handleLearnAgain} className={styles.finishLessonButton} >Seguir aprendiendo</button>
         </div>
       )}
     </div>
