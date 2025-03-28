@@ -63,7 +63,10 @@ function CreateAvatar() {
           <div key={index} onClick={() => handleSelectAvatar(avatar)}>
             <AvatarCard {...avatar} />
           </div>
+         
         ))}
+         <div className={styles.randomAvatar} onClick={() => handleSelectAvatar(avatars[Math.floor(Math.random() * avatars.length)])}>
+         <i className="bi bi-shuffle" style={{ fontSize: "2.5rem" }}></i></div>
       </div>
 
       <div className={styles.buttonContainer}>
