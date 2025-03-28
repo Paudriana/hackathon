@@ -30,7 +30,7 @@ const lessons = [
 export default function Learn() {
 
   return (
-    <div>
+    <div style={{ paddingBottom: "80px" }}>
       {lessons.map((lesson, i) => (
         <LessonStep title={lesson.title} description={lesson.description} state={lesson.state} index={i}/>
       ))}
