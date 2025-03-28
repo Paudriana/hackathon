@@ -1,7 +1,37 @@
 .lessonContainer {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     padding: 20px;
+    height: 100%;
+  }
+
+  .lessonTitle {
+    color: #2F2558;
+    margin: 1rem;
+    text-align: center;
+
+  }
+
+  .lessonSubtitle {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #E95877;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .continueButton {
+    position: absolute;
+    bottom: 80px;
+    left: 25%
+  }
+
+  .contentText {
+    text-align: left;
+  }
+
+  .lessonImg {
+    max-width:80%;
+    border-radius: 50%;
+    display:flex;
+    margin: auto;
   }

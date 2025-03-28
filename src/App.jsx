@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Intro from "./pages/intro/Intro";
 import CreateAvatar from "./pages/avatar/CreateAvatar";
-import Learn from "./pages/learn.jsx/Learn";
+import Learn from "./pages/learn/Learn";
 import Lesson from "./pages/lesson/Lesson";
 import Quiz from "./pages/quiz/Quiz";
 import Result from "./pages/result/Result";
