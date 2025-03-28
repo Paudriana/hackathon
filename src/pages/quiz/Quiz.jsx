@@ -74,6 +74,8 @@ export default function Quiz() {
   };
 
   return (
+    <>
+    <i className="bi bi-arrow-left" style={{ fontSize: "2rem" }} onClick={previousStep}></i>
     <div className="quiz-container">
       {!showResult ? (
         <div>
@@ -115,5 +117,7 @@ export default function Quiz() {
         </div>
       )}
     </div>
+    </>
+   
   );
 }
